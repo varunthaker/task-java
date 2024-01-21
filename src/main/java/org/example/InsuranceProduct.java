@@ -1,7 +1,6 @@
 package org.example;
 
-public interface InsuranceProduct
-{
+public interface InsuranceProduct {
     double calculatedSumInsured(double livingSpace);
 
 }

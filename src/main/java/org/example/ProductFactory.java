@@ -1,15 +1,11 @@
 package org.example;
 
-public class ProductFactory
-{
-    public static InsuranceProduct createProduct (String productType) {
-        switch (productType.toLowerCase()) {
-            case "compact":
-                return new CompactProduct();
-            case "optimal":
-                return new OptimalProduct();
-            default:
-                throw new IllegalArgumentException("Invalid product type");
-        }
+public class ProductFactory {
+    public static InsuranceProduct createProduct(String productType) throws InsuranceProductException {
+        return switch (productType.toLowerCase()) {
+            case "compact" -> new CompactProduct();
+            case "optimal" -> new OptimalProduct();
+            default -> throw new InsuranceProductException("invalid product is entered");
+        };
     }
 }

@@ -1,9 +1,8 @@
 package org.example;
 
-public class CompactProduct implements InsuranceProduct
-{
-    public double calculatedSumInsured(double livingSpace)
-    {
-        return 650*livingSpace;
+public class CompactProduct implements InsuranceProduct {
+    private final int pricePerMeterSquare = 650;
+    public double calculatedSumInsured(double livingSpace) {
+        return pricePerMeterSquare * livingSpace;
     }
 }
