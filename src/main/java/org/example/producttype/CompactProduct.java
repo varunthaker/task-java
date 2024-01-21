@@ -1,4 +1,4 @@
-package org.example;
+package org.example.producttype;
 
 public class CompactProduct implements InsuranceProduct {
     private final int pricePerMeterSquare = 650;

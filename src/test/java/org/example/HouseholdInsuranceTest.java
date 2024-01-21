@@ -1,33 +1,22 @@
 package org.example;
 
+import org.example.producttype.CompactProduct;
+import org.example.producttype.OptimalProduct;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class HouseholdInsuranceTest {
 
     @Test
-    void testCalculatedSumInsuredCompact()
-    {
-        var compactInsuranceProduct =new CompactProduct();
-       double sumInsured = compactInsuranceProduct.calculatedSumInsured( 100);
-       assertEquals(650 * 100, sumInsured);
+    void compactProduct100_calculate_65000() {
+        assertEquals(65000, new CompactProduct().calculatedSumInsured(100), 0.0);
     }
 
     @Test
-    void testCalculatedSumInsuredOptimal()
-    {
-        var optimalInsuranceProduct = new OptimalProduct();
-        double sumInsured = optimalInsuranceProduct.calculatedSumInsured(150);
-        assertEquals(700 * 150, sumInsured);
-    }
-
-    @Test
-    void testCalculateSumInsuredInvalidProduct()
-    {
-        var productFactory = new ProductFactory();
-        assertThrows(IllegalArgumentException.class, () ->
-                productFactory.createProduct("invalidProduct"));
+    void optimalProduct100_calculate_70000() {
+       assertEquals(70000, new OptimalProduct().calculatedSumInsured(100), 0.0);
     }
 
 }

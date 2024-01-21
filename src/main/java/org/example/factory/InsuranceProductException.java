@@ -1,4 +1,4 @@
-package org.example;
+package org.example.factory;
 
 public class InsuranceProductException extends Throwable {
     InsuranceProductException(String message) {
